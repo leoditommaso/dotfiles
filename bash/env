@@ -1,0 +1,50 @@
+# Bash history settings
+
+# Very very long history size
+export HISTFILESIZE=99999
+export HISTSIZE=99999
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+export HISTFILE=~/.bash_custom_history
+# Erase duplicates (older ones)
+export HISTCONTROL=erasedups
+# Force prompt to write history after every command.
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Boot2docker
+#export DOCKER_HOST=tcp://192.168.80.100:2376
+#export DOCKER_CERT_PATH=/Users/leandro/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
+
+# Language definitions
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# MANPAGER variables for less to have pretty colours
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4) # yellow on blue
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7) # white
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
+
+export VISUAL='vim'
+export EDITOR='vim'
+
+# make vim and tmux play nicely regarding colors
+export TERM='xterm-256color'
+
+# ls options
+if _mac_osx; then
+  export CLICOLOR=1;
+  export LSCOLORS=ExFxCxDxBxeGeHabagaceh
+fi
+
+export HOMEBREW_GITHUB_API_TOKEN=7410da40796cd3e8b5ce800289009a986d948855
+export JAVA_HOME=$(/usr/libexec/java_home)

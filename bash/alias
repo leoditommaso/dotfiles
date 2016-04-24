@@ -1,0 +1,76 @@
+### General stuff ###
+alias grep="grep --color=auto"
+alias l="ls -o"
+alias la="ls -lhA"
+alias lg="la | grep -i"
+alias lr="ls -R "
+alias df="df -h"
+alias du="du -hs"
+# http://gyaresu.org/hacking/2012/08/02/alias-to-show-the-size-of-files-and-folders/
+alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'''
+alias tree="tree -C"
+alias vi='vim -p'
+
+### Folders and archives ###
+alias mv="mv -iv"
+alias mkdir="mkdir -p"
+alias dateformat="date \"+%d-%m-%Y\""
+
+### Mac specific ###
+if _mac_osx ; then
+  alias o="open"
+  alias o.="open ."
+  alias brup="brew update && brew upgrade && brew cleanup"
+  alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+  alias mf="mdfind"
+fi
+
+### GIT ###
+alias gs='git status -bs'
+alias ga='git add --all '
+alias gd='git diff '
+alias grv='git remote -v'
+# http://gyaresu.org/hacking/2012/06/19/a-better-git-log
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias gc='git commit -v'
+alias gco='git checkout '
+alias gba='git branch -av'
+alias gap='git add --all && git commit'
+
+### Bundler ###
+alias be='bundle exec'
+alias bl='bundle list'
+alias bu='bundle update'
+alias bi='bundle install'
+
+### Vagrant ###
+alias vup='vagrant up'
+alias vsh='vagrant ssh'
+alias vst='vagrant status'
+alias vsg='vagrant global-status'
+alias vre='vagrant resume'
+alias vha='vagrant halt'
+alias vsu='vagrant suspend'
+
+# Berkshelf
+alias biu="berks install && berks upload"
+
+### Miscelaneous ###
+# Flush DNS cache.
+alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
+# Copy public key to clipboard.
+alias pubkey="pbcopy < ~/.ssh/id_rsa.pub"
+# Start web server in current directory and port 4500.
+alias web='python -m SimpleHTTPServer 4500'
+# Requires RealVNC installed.
+alias vncviewer="/Applications/RealVNC/VNC\ Viewer.app/Contents/MacOS/vncviewer"
+
+# Chef
+alias kl="chef exec kitchen login"
+alias kt="chef exec kitchen test"
+alias kc="chef exec kitchen converge"
+alias klist="chef exec kitchen list"
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
