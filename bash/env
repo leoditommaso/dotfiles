@@ -46,5 +46,4 @@ if _mac_osx; then
   export LSCOLORS=ExFxCxDxBxeGeHabagaceh
 fi
 
-export HOMEBREW_GITHUB_API_TOKEN=7410da40796cd3e8b5ce800289009a986d948855
 export JAVA_HOME=$(/usr/libexec/java_home)
