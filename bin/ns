@@ -1,0 +1,7 @@
+# List all connections and listening ports.
+# If a parameter is given a grep is applied with it.
+if [ $# -eq 0 ]; then
+  sudo lsof -i -P -n
+else
+  sudo lsof -i -P -n | grep -i $1
+fi
