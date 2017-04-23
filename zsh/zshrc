@@ -1,0 +1,18 @@
+DOTFILES_DIR="$HOME/.dotfiles"
+source "$DOTFILES_DIR/shell/init.sh"
+source "$DOTFILES_DIR/zsh/init.zsh"
+export SAVEHIST=$HISTSIZE
+setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+local knownhosts
+knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} ) 
+zstyle ':completion:*:hosts' hosts $hosts $knownhosts
+compdef '_dispatch ssh ssh' sshok
+export PROMPT_EOL_MARK=""
+
+if [ -f ~/.zshrc_local ]; then
+  source ~/.zshrc_local
+fi
+
+eval "$(rbenv init -)"

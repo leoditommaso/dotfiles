@@ -25,18 +25,6 @@ if _mac_osx ; then
   alias mf="mdfind"
 fi
 
-### GIT ###
-alias gs='git status -bs'
-alias ga='git add --all '
-alias gd='git diff '
-alias grv='git remote -v'
-# http://gyaresu.org/hacking/2012/06/19/a-better-git-log
-alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-alias gc='git commit -v'
-alias gco='git checkout '
-alias gba='git branch -av'
-alias gap='git add --all && git commit'
-
 ### Bundler ###
 alias be='bundle exec'
 alias bl='bundle list'
@@ -73,4 +61,3 @@ alias klist="chef exec kitchen list"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
-

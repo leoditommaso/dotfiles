@@ -2,8 +2,7 @@
 _mac_osx() { [ $(uname) = 'Darwin' ] ;}
 _linux() { [ $(uname) = 'Linux' ] ;}
 
-# directory from which the plugins is being invoked
-dir="$DOTFILES_DIR/bash"
+dir="$DOTFILES_DIR/shell"
 
 env_file="$dir/env"
 [ -e $env_file ] && source $env_file

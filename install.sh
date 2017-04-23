@@ -38,5 +38,3 @@ sleep 2
 vim +BundleInstall! +BundleClean +qall
 
 echo "Finished installing dotfiles."
-
-

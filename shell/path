@@ -1,0 +1,1 @@
+export PATH="$HOME/.bin.local:$HOME/.bin.mikroways:$HOME/.bin:/usr/local/sbin:$PATH"
