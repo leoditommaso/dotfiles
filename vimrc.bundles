@@ -31,8 +31,9 @@ Plugin 'vim-scripts/tComment'
 Plugin 'godlygeek/tabular'
 Plugin '0rca/vim-mikrotik'
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
-Plugin 'rizzatti/dash.vim'
 
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'scrooloose/nerdtree'
 Bundle 'leoditommaso/tonight-is-the-night'
 
 if filereadable(expand("~/.vimrc.bundles.local"))

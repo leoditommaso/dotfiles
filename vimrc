@@ -65,7 +65,7 @@ augroup vimrcEx
 
   " Automatically wrap at 80 characters for Markdown
   autocmd FileType markdown setlocal textwidth=80
-  autocmd FileType latex setlocal textwidth=120
+  autocmd FileType latex setlocal textwidth=90
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
@@ -162,10 +162,16 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 set spell spelllang=es,en
 
 " Default typeface and font size
-set guifont=Osaka:h13
+set guifont=Hack\ Regular:h12
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
 
-" Open every files passed as arguments in tabs
-
+" Open NERDTree when VI starts up.
+"autocmd vimenter * NERDTree
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
