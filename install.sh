@@ -6,6 +6,9 @@ R="\033[0;31m"
 B="\033[0;34m"
 Y="\033[0;33m"
 
+echo Changing directory to "$( dirname "${BASH_SOURCE[0]}" )"
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
 echo "$G Updating Submodules"
 git submodule update --init --recursive
 
@@ -33,8 +36,9 @@ for name in *; do
     echo "$Y [~] Skipping ${name}"
   fi
 done
+
 echo "Gonna install vim plugins, might take a while."
-sleep 2
+[[ ! -d $HOME/.vim/bundle/Vundle.vim ]] && git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +BundleInstall! +BundleClean +qall
 
 echo "Finished installing dotfiles."
